@@ -7,8 +7,13 @@ router.get('/ninja', function(request, response){
 });
 
 //POST --> untuk input data
-router.get('/ninja', function(request, response){
-  response.send({type:'POST'});
+router.post('/ninja', function(request, response){
+  console.log(request.body);
+  response.send({
+    type:'POST',
+    nama:request.body.nama,
+    id:request.body.nim
+  });
 });
 
 //PUT --> untuk update data
